@@ -1,0 +1,9 @@
+<h1>Restaurants</h1>
+<ul>
+<%@restaurants.each do |restaurant|%>
+  <li><%="#{restaurant.name} || #{restaurant.address} || #{restaurant.category} || "%>
+  <p class="btn btn-secondary"><%= link_to "View", restaurant_path(restaurant)%></p>
+  <p class="btn btn-secondary"><%= link_to "Destroy", restaurant, method: :delete %></p>
+<% end %>
+</ul>
+<p class="btn btn-secondary"><%= link_to "New restaurant", new_restaurant_path%></p>
